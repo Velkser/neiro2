@@ -1,3 +1,4 @@
+#TODO More neiro
 import numpy as np
 
 def sigmoid(x):
