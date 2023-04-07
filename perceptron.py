@@ -24,8 +24,8 @@ sinaptik_weights = 2*np.random.random((3,1)) - 1
 
 
 #Метод обратного распространения
-for i in range(200000):
-    input_layer =training_inputs
+for i in range(20000):
+    input_layer = training_inputs
     outputs = sigmoid( np.dot(input_layer, sinaptik_weights))
     
     err = training_outputs - outputs
@@ -44,7 +44,8 @@ test_inputs = [np.array([0,0,1]),
                np.array([1,0,1]),
                np.array([1,1,0]),
                np.array([1,1,1])]
+
 print("Новая ситуация: ")
 for i in test_inputs:
     outputs = sigmoid( np.dot(i, sinaptik_weights))
-    print(outputs)
+    print(int(np.rint(outputs)))
