@@ -5,17 +5,17 @@ import numpy as np
 def sigmoid(x):
     return 1/(1+np.exp(-x))
 
+
 #Тренировочные данные
 training_inputs = np.array([[0,0,1], #0
                             [1,1,1], #1
                             [1,0,0], #1
-                            [0,1,0],
-                            [1,0,1],
-                            [0,1,1],
-                            [1,0,0],
-                            [0,0,0]])#0
+                            [0,1,0], #0
+                            [1,0,1], #1
+                            [0,1,1], #0
+                            ])
 
-training_outputs = np.array([[0,1,1,0,1,0,1,0]]).T
+training_outputs = np.array([[0,1,1,0,1,0]]).T
 
 np.random.seed(1)
 
@@ -47,5 +47,5 @@ test_inputs = [np.array([0,0,1]),
 
 print("Новая ситуация: ")
 for i in test_inputs:
-    outputs = sigmoid( np.dot(i, sinaptik_weights))
+    outputs = sigmoid(np.dot(i, sinaptik_weights))
     print(int(np.rint(outputs)))
